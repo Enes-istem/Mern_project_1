@@ -1,15 +1,50 @@
-const express = require("express")
+const express = require("express");
 const router = express.Router();
-const BookController = require("../controllers/BookController")
+const BookController = require("../controllers/BookController");
 
+// base url: /api/books
 
+/**
+ * @route   GET /api/books
+ * @desc    Books Listing endpoint
+ * @access  Public
+ */
+router.get("/", BookController.getBookList);
 
-
-
-
-router.get("/", BookController.getBookList)
-
-
-router.get("/details/:id", BookController.getBookDetails)
+/**
+ * @route   GET /api/books/details/:id
+ * @desc    Books Details endpoint
+ * @access  Public
+ */
+router.get("/details/:id", BookController.getBookDetails);
 
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const express = require("express")
+// const router = express.Router();
+// const BookController = require("../controllers/BookController")
+
+
+
+
+
+
+// router.get("/", BookController.getBookList)
+
+
+// router.get("/details/:id", BookController.getBookDetails)
+
+// module.exports = router;
